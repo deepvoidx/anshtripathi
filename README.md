@@ -17,3 +17,7 @@ Open `index.html` in a browser, or serve the folder with any static web server.
 
 ## Deploy
 The folder can be deployed to GitHub Pages, Cloudflare Pages, Netlify, Vercel or any static host.
+
+
+## GitHub Pages image fix
+The portrait is also stored at the repository root as `pfp.jpg` and referenced as `./pfp.jpg`. Keep the filename lowercase.
