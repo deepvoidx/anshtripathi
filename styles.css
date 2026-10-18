@@ -345,3 +345,30 @@ body{overflow-x:clip}
   .contact h2{font-size:2.68rem;}
   .case-title h4{font-size:2.52rem;}
 }
+
+/* V10 mobile rhythm: close the large transition after the hero CTA and keep sections visually connected. */
+@media (max-width:620px){
+  .hero{
+    padding-top:96px !important;
+    padding-bottom:30px !important;
+  }
+  .hero-grid{gap:18px !important;}
+  .hero-actions{margin-bottom:0 !important;}
+  .hero-visual{display:none !important;}
+  .statement{
+    padding-top:28px !important;
+    padding-bottom:52px !important;
+  }
+  .statement-grid{gap:20px !important;}
+  .work{padding-top:38px !important;}
+  .section-heading{margin-bottom:30px !important;gap:18px !important;}
+  .case{margin-bottom:26px !important;}
+  .capabilities{padding-top:42px !important;padding-bottom:48px !important;}
+  .about{padding-top:46px !important;padding-bottom:54px !important;}
+  .about-grid{gap:27px !important;}
+  .contact{padding-top:42px !important;padding-bottom:44px !important;}
+}
+@media (max-width:390px){
+  .hero{padding-bottom:24px !important;}
+  .statement{padding-top:22px !important;}
+}
