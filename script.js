@@ -22,11 +22,3 @@ toggleBackToTop();
 backToTop.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
-
-\n// GitHub Pages fallback for the portrait asset.
-document.querySelectorAll('img[src="./pfp.jpg"]').forEach((img) => {
-  img.addEventListener('error', () => {
-    const fallback = new URL('./assets/pfp.jpg', document.baseURI).href;
-    if (img.src !== fallback) img.src = fallback;
-  }, { once: true });
-});
