@@ -222,3 +222,126 @@ body{overflow-x:clip}
   .account-head{grid-template-columns:minmax(0,1fr);gap:10px}
   .platform-stack{max-width:none;justify-content:flex-start}
 }
+
+/* V9 mobile flow polish: remove the presentation-deck feeling on narrow screens. */
+@media (max-width:620px){
+  /* Let the page read as one continuous editorial canvas instead of stacked slides. */
+  .grid-glow{
+    opacity:.42;
+    background-size:120px 120px;
+    mask-image:linear-gradient(to bottom,transparent 0%,black 12%,black 88%,transparent 100%);
+    -webkit-mask-image:linear-gradient(to bottom,transparent 0%,black 12%,black 88%,transparent 100%);
+  }
+  .statement,
+  .capabilities{
+    background:transparent;
+    border-top:0;
+    border-bottom:0;
+  }
+  .statement{
+    padding-top:58px;
+    padding-bottom:64px;
+  }
+  .work{
+    padding-top:60px;
+    padding-bottom:36px;
+  }
+  .capabilities{
+    padding-top:62px;
+    padding-bottom:62px;
+  }
+  .about{
+    padding-top:62px;
+    padding-bottom:66px;
+  }
+  .contact{
+    padding-top:60px;
+    padding-bottom:56px;
+  }
+
+  /* Remove the repeated rules that visually divide the page into PPT-like panels. */
+  .case{
+    border:1px solid rgba(255,255,255,.095);
+    background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018));
+    box-shadow:0 24px 70px rgba(0,0,0,.14);
+    margin-bottom:32px;
+  }
+  .case-top{
+    border-bottom:0;
+    background:transparent;
+    padding-bottom:7px;
+  }
+  .account-head{
+    padding-top:17px;
+  }
+  .case-main{
+    padding-top:22px;
+  }
+  .responsibility-strip{
+    border-top:0;
+    background:rgba(255,255,255,.018);
+    margin-top:2px;
+  }
+
+  /* Capabilities should feel like a flowing list, not individual presentation slides. */
+  .cap-list{
+    border-top:0;
+  }
+  .cap{
+    border-bottom:0;
+    padding:19px 0;
+    position:relative;
+  }
+  .cap + .cap{padding-top:21px;}
+  .cap + .cap:before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:46px;
+    right:0;
+    height:1px;
+    background:linear-gradient(90deg,rgba(255,255,255,.055),transparent 82%);
+  }
+
+  /* Softer transitions between sections. */
+  .statement-grid,
+  .section-heading,
+  .cap-grid,
+  .about-grid{
+    gap:28px;
+  }
+  .section-heading{margin-bottom:38px;}
+
+  /* Keep the visual language, but stop oversized typography from feeling like a slide title. */
+  .statement h2,
+  .section-heading h2,
+  .cap-intro h2,
+  .about-copy h2,
+  .contact h2{
+    font-size:clamp(2.72rem,12.4vw,4rem);
+    line-height:.96;
+  }
+  .case-title h4{
+    font-size:clamp(2.55rem,11.3vw,3.55rem);
+  }
+
+  /* More breathing room inside cards, less empty space between cards. */
+  .case-desc p{margin-bottom:16px;}
+  .tag-row{margin-bottom:2px;}
+
+  /* Footer becomes part of the page instead of another framed boundary. */
+  .footer{
+    border-top:0;
+    padding-top:18px;
+    padding-bottom:24px;
+  }
+}
+
+@media (max-width:390px){
+  .statement h2,
+  .section-heading h2,
+  .cap-intro h2,
+  .about-copy h2,
+  .contact h2{font-size:2.68rem;}
+  .case-title h4{font-size:2.52rem;}
+}
